@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import "tailwindcss";
+
+:root {
+  --bg: #eef1f5;
+  --surface: #fff3d9;
+  --card: #bfddf0;
+  --accent: #8cc0eb;
+  --accent2: #f4b3a1;
+  --text: #0f172a;
+  --muted: #475569;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, rgba(255, 235, 204, 0.9), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(191, 221, 240, 0.4), transparent 20%),
+    linear-gradient(180deg, rgba(255, 249, 210, 0.92) 0%, rgba(238, 241, 245, 0.98) 100%);
+  color: var(--text);
+  font-family: Inter, sans-serif;
+}
+
+.handwritten {
+  font-family: 'Patrick Hand', cursive;
+}
+
+.layered-card,
+.depth-card,
+.sketch-card {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  box-shadow: 0 16px 0 rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(15, 23, 42, 0.03);
+}
+
+.layered-card {
+  background: rgba(255, 248, 224, 0.98);
+  border: 4px solid rgba(244, 179, 161, 0.95);
+}
+
+.layered-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 2px dashed rgba(140, 192, 235, 0.25);
+  transform: translate(6px, 6px);
+  z-index: -1;
+}
+
+.layered-card::after {
+  content: '';
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  background: rgba(140, 192, 235, 0.16);
+  bottom: 1.25rem;
+  right: 1.25rem;
+  filter: blur(10px);
+  z-index: -1;
+}
+
+.depth-card {
+  position: relative;
+  border: 5px solid rgba(244, 179, 161, 0.95);
+  background: rgba(255, 248, 224, 0.98);
+  border-radius: 2rem;
+  overflow: hidden;
+  animation: cartoon-bounce 8s ease-in-out infinite;
+}
+
+.depth-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 4px dashed rgba(140, 192, 235, 0.4);
+  transform: translate(0px, 0px);
+  z-index: -1;
+}
+
+.depth-panel {
+  border: 3px dashed rgba(140, 192, 235, 0.55);
+  background: rgba(191, 221, 240, 0.12);
+  border-radius: 1.75rem;
+}
+
+.photo-frame {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  background: var(--surface);
+  border: 7px solid rgba(244, 179, 161, 0.95);
+}
+
+.photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: -16px;
+  border-radius: inherit;
+  border: 4px dotted rgba(244, 179, 161, 0.4);
+  transform: rotate(-2deg);
+  z-index: -1;
+}
+
+.photo-frame::after {
+  content: '';
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: rgba(140, 192, 235, 0.16);
+  top: 1rem;
+  right: 1rem;
+  filter: blur(6px);
+  z-index: -1;
+}
+
+.photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: inherit;
+  border: 4px dotted rgba(244, 179, 161, 0.4);
+  transform: rotate(-2deg);
+  z-index: -1;
+}
+
+.pixel-card {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.pixel-card img {
+  transition: transform 0.4s ease;
+}
+
+.pixel-card:hover img {
+  transform: scale(1.04);
+}
+
+.pixel-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+  background-size: 14px 14px;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+.pixel-card:hover::before {
+  opacity: 1;
+}
+
+.image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.35s ease, transform 0.35s ease;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.pixel-card:hover .image-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-overlay p {
+  margin: 0;
+}
+
+.image-overlay .overlay-title {
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.72);
+  text-transform: uppercase;
+}
+
+.image-overlay .overlay-copy {
+  margin-top: 0.85rem;
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.photo-badge {
+  position: absolute;
+  left: 1.25rem;
+  bottom: 1.25rem;
+  padding: 0.75rem 1rem;
+  background: rgba(140, 192, 235, 0.18);
+  border: 2px dashed rgba(140, 192, 235, 0.45);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.scribble-title {
+  position: relative;
+  display: inline-block;
+}
+
+.scribble-title::after {
+  content: '';
+  position: absolute;
+  left: -0.25rem;
+  right: -0.25rem;
+  bottom: -0.35rem;
+  height: 0.85rem;
+  background: rgba(244, 179, 161, 0.45);
+  transform: rotate(-1deg);
+  border-radius: 999px;
+  z-index: -1;
+}
+
+.sketch-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.sketch-section::before,
+.sketch-section::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.sketch-section::before {
+  width: 180px;
+  height: 180px;
+  top: -30px;
+  right: -50px;
+  background: rgba(244, 179, 161, 0.18);
+}
+
+.sketch-section::after {
+  width: 140px;
+  height: 140px;
+  bottom: -30px;
+  left: -40px;
+  background: rgba(140, 192, 235, 0.12);
+}
+
+.sketch-card {
+  border: 4px solid rgba(140, 192, 235, 0.75);
+  background: rgba(255, 248, 224, 0.95);
+  animation: cartoon-bounce 8s ease-in-out infinite;
+  box-shadow: 0 12px 0 rgba(15, 23, 42, 0.04);
+}
+
+.project-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 0.85rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--text);
+}
+
+.hero-splash {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(18px);
+  opacity: 0.9;
+  z-index: 0;
+}
+
+.hero-splash.blue {
+  width: 180px;
+  height: 180px;
+  top: -40px;
+  left: -30px;
+  background: rgba(140, 192, 235, 0.2);
+}
+
+.hero-splash.peach {
+  width: 140px;
+  height: 140px;
+  bottom: 10%;
+  right: -20px;
+  background: rgba(244, 179, 161, 0.2);
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  background: rgba(244, 179, 161, 0.18);
+  border: 2px dashed rgba(244, 179, 161, 0.45);
+  color: var(--text);
+  font-weight: 700;
+}
+
+.scribble-button {
+  border: 3px solid rgba(140, 192, 235, 0.9);
+  background: rgba(140, 192, 235, 0.2);
+  box-shadow: 0 8px 0 rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.scribble-button:hover {
+  transform: translateY(-2px) scale(1.02);
+  background: rgba(140, 192, 235, 0.35);
+}
+
+.scribble-link {
+  position: relative;
+  display: inline-block;
+}
+
+.scribble-link::after {
+  content: '';
+  position: absolute;
+  left: -0.35rem;
+  right: -0.35rem;
+  bottom: -0.25rem;
+  height: 0.8rem;
+  background: rgba(191, 221, 240, 0.35);
+  transform: rotate(-1deg);
+  border-radius: 999px;
+  z-index: -1;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes cartoon-bounce {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(-0.5deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(0.5deg);
+  }
+  75% {
+    transform: translateY(-4px) rotate(-0.5deg);
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-1deg);
+  }
+  50% {
+    transform: rotate(1deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-heading {
+    font-size: 2.5rem;
+    line-height: 1.08;
+  }
+
+  .handwritten {
+    font-size: 1.15rem;
+  }
+
+  .sketch-card {
+    animation: none;
+  }
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(140, 192, 235, 0.35);
+  color: var(--text);
+}
+
+/* Timeline Custom Styles */
+.timeline-list {
+  position: relative;
+}
+.timeline-list::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  bottom: 1rem;
+  width: 4px;
+  background-image: linear-gradient(to bottom, var(--accent) 50%, transparent 50%);
+  background-size: 4px 16px;
+  background-repeat: repeat-y;
+  opacity: 0.5;
+}
+
+@media (min-width: 640px) {
+  .timeline-list::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  border: 4px solid var(--accent2);
+  background: var(--surface);
+  transform: translateX(-37%);
+  z-index: 10;
+  box-shadow: 0 4px 0 rgba(15, 23, 42, 0.05);
+}
+
+@media (min-width: 640px) {
+  .timeline-dot {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+/* Smooth Focus States */
+.focus-ring {
+  transition: all 0.3s ease;
+}
+.focus-ring:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(140, 192, 235, 0.25);
+  transform: translateY(-1px);
+}
