@@ -19,6 +19,14 @@ function Projects() {
       bg: "#bfddf0",
     },
     {
+      title: "3D Isometric Stack Game",
+      description: "An adaptive, mobile arcade game built with Flutter featuring real-time 3D custom painters, responsive particle physics engines, and mood-matching dynamic design palettes.",
+      tech: ["Flutter", "Dart", "Custom Paint"],
+      demo: "https://drive.google.com/file/d/1E8C0MZWOEh87k_q2hu7Ebufelaav7LPu/view?usp=drivesdk",
+      code: null, // Change this string to your GitHub repo link if you push your code!
+      bg: "#87c5b7", // Inherits the original teal color of your game background
+    },
+    {
       title: "Personal Finance Tracker",
       description: "A high-fidelity cross-platform finance manager designed with Flutter and Firebase, featuring 8+ custom screens, interactive charting, and real-time ledger tracking.",
       tech: ["Flutter", "Firebase", "Figma"],
@@ -105,7 +113,7 @@ function Projects() {
                 >
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0x"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
                   Demo
                 </motion.a>
