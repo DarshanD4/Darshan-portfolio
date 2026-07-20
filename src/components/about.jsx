@@ -43,13 +43,13 @@ function About() {
               className="handwritten text-lg sm:text-xl leading-relaxed text-[#475569]"
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
             >
-              I am a mobile developer and full-stack engineer specializing in crafting scalable, intelligence-driven applications. Using tools like Flutter, React Native, and Firebase, I translate intricate product ideas into beautiful, production-ready experiences.
+              I am an App Developer Intern at Bytecrafts Studios India and a full-stack mobile developer specializing in building scalable, intelligence-driven applications. Using tools like Flutter, React Native, and Firebase, I translate intricate product ideas into beautiful, production-ready experiences.
             </motion.p>
             <motion.p 
               className="text-base sm:text-lg leading-relaxed text-[#475569]"
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
             >
-              I focus on designing intuitive, responsive layouts and integrating smart AI features. My goal is to build high-performance MVPs that help cross-functional engineering teams collaborate and launch high-impact products.
+              I focus on designing intuitive, responsive layouts and integrating smart AI features. My goal is to build high-performance MVPs that help engineering teams collaborate and launch high-impact products.
             </motion.p>
             <motion.p 
               className="text-base sm:text-lg leading-relaxed text-[#475569]"
@@ -74,7 +74,7 @@ function About() {
                 </svg>
                 <p className="text-xs uppercase tracking-[0.25em] text-[#475569] font-bold">Experience</p>
               </div>
-              <p className="text-base font-bold text-[#0f172a] leading-snug">AI solutions, React Native, Flutter, Firebase</p>
+              <p className="text-base font-bold text-[#0f172a] leading-snug">Bytecrafts Studios Intern, React Native, Flutter, Firebase</p>
             </motion.div>
 
             <motion.div 
@@ -108,20 +108,20 @@ function About() {
             whileHover={{ rotate: -0.5 }}
           >
             <div>
-              <p className="text-xs uppercase tracking-[0.35em] text-[#8cc0eb] font-bold">Snapshot</p>
+              <p className="text-xs uppercase tracking-[0.35em] text-[#8cc0eb] font-bold">Current Snapshot</p>
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#475569]">
-                I bring product intuition, rapid iteration, and AI-first thinking to every mobile experience.
+                Currently interning at <strong className="text-[#0f172a]">Bytecrafts Studios India</strong>, applying AI-first thinking and rapid mobile iteration to build modern applications.
               </p>
             </div>
             
             <div className="grid gap-3 sm:grid-cols-2">
-              <span className="flex items-center justify-center gap-2 rounded-full bg-[#ffebcc] px-4 py-2.5 text-sm font-bold text-[#0f172a] shadow-sm">
+              <span className="flex items-center justify-center gap-2 rounded-full bg-[#ffebcc] px-4 py-2.5 text-sm font-bold text-[#0f172a] shadow-xs">
                 <svg className="w-4 h-4 text-[#0f172a]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                 </svg>
                 Mobile-first
               </span>
-              <span className="flex items-center justify-center gap-2 rounded-full bg-[#bfddf0] px-4 py-2.5 text-sm font-bold text-[#0f172a] shadow-sm">
+              <span className="flex items-center justify-center gap-2 rounded-full bg-[#bfddf0] px-4 py-2.5 text-sm font-bold text-[#0f172a] shadow-xs">
                 <svg className="w-4 h-4 text-[#0f172a]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
                 </svg>

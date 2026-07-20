@@ -64,15 +64,15 @@ function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-[#8cc0eb] font-bold">Projects</p>
-          <h2 className="handwritten scribble-title mt-4 text-4xl font-bold text-[#0f172a]">Selected work</h2>
-          <p className="mt-4 mx-auto max-w-2xl text-[#475569] text-base sm:text-lg">
-            A sample of product and AI projects that highlight my experience in mobile design, app architecture, and model-driven features.
+          <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-[#8cc0eb] font-extrabold">Portfolio Work</p>
+          <h2 className="handwritten scribble-title mt-4 text-4xl sm:text-5xl font-bold text-[#0f172a]">Selected Projects</h2>
+          <p className="mt-4 mx-auto max-w-2xl text-[#475569] text-base sm:text-lg font-medium">
+            Featured mobile applications, AI algorithms, and interactive games built with Flutter, React Native, and Python.
           </p>
         </motion.div>
 
         <motion.div 
-          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          className="grid gap-8 md:grid-cols-2 lg:grid-cols-2 max-w-4xl mx-auto"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -82,54 +82,54 @@ function Projects() {
             <motion.div
               key={project.title}
               variants={cardVariants}
-              style={{ backgroundColor: project.bg, borderColor: project.bg === '#8cc0eb' ? '#6faee3' : '#8cc0eb' }}
-              className="layered-card overflow-hidden rounded-[2.5rem] p-8 flex flex-col justify-between items-stretch text-center cursor-pointer transition-shadow hover:shadow-[0_20px_35px_rgba(15,23,42,0.06)]"
-              whileHover={{ y: -6 }}
+              style={{ backgroundColor: project.bg }}
+              className="layered-card overflow-hidden rounded-[2.5rem] p-7 sm:p-9 flex flex-col justify-between items-stretch text-center cursor-pointer transition-all hover:shadow-[0_20px_35px_rgba(15,23,42,0.08)]"
+              whileHover={{ y: -6, scale: 1.01 }}
             >
-              <div className="relative">
+              <div className="relative flex flex-col items-center">
                 <div className="absolute -top-6 right-6 h-20 w-20 rounded-full bg-white/40 blur-2xl" />
                 <h3 className="handwritten text-2xl sm:text-3xl font-extrabold text-[#0f172a]">{project.title}</h3>
-                <p className="mt-4 mx-auto max-w-[280px] text-sm sm:text-base leading-relaxed text-[#475569] min-h-[80px]">
+                <p className="mt-4 text-sm sm:text-base leading-relaxed text-[#475569] font-medium min-h-[70px]">
                   {project.description}
                 </p>
                 
                 <div className="mt-6 flex flex-wrap justify-center gap-2">
                   {project.tech.map((item) => (
-                    <span key={item} className="project-chip font-bold text-[10px] uppercase tracking-wider shadow-sm border border-[#0f172a]/5">
+                    <span key={item} className="project-chip font-extrabold text-[10px] uppercase tracking-wider shadow-xs border border-[#0f172a]/10 bg-white/80 text-[#0f172a] px-3 py-1.5 rounded-full">
                       {item}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="mt-10 flex items-center justify-center gap-3 w-full">
+              <div className="mt-8 flex items-center justify-center gap-3 w-full">
                 <motion.a 
                   href={project.demo} 
                   target="_blank"
                   rel="noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 rounded-full bg-[#0f172a] text-white px-5 py-2.5 text-xs font-bold shadow-sm transition hover:bg-[#0f172a]/90"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
+                  className="flex-1 flex items-center justify-center gap-2 rounded-full bg-[#0f172a] text-white px-5 py-3 text-xs font-black uppercase tracking-wider shadow-sm transition hover:bg-[#0f172a]/90"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
                 >
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                   </svg>
-                  Demo
+                  <span>Demo</span>
                 </motion.a>
                 {project.code ? (
                   <motion.a 
                     href={project.code} 
                     target="_blank"
                     rel="noreferrer"
-                    className="flex-1 flex items-center justify-center gap-2 rounded-full bg-white text-[#0f172a] border-2 border-[#0f172a] px-5 py-2 text-xs font-bold shadow-sm transition hover:bg-[#eef1f5]"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                    className="flex-1 flex items-center justify-center gap-2 rounded-full bg-white text-[#0f172a] border-2 border-[#0f172a] px-5 py-2.5 text-xs font-black uppercase tracking-wider shadow-xs transition hover:bg-[#fff9d2]"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
                   >
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-4 h-4 text-[#0f172a]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
                     </svg>
-                    Code
+                    <span>Code</span>
                   </motion.a>
                 ) : null}
               </div>

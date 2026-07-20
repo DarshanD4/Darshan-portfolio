@@ -1,20 +1,29 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Skills() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
   const skills = [
-    { name: "Dart", type: "Language" },
-    { name: "Flutter", type: "Framework" },
-    { name: "React Native", type: "Framework" },
-    { name: "Python", type: "Language" },
-    { name: "C", type: "Language" },
-    { name: "Firebase", type: "Backend" },
-    { name: "REST APIs", type: "Integration" },
-    { name: "SQLite", type: "Database" },
-    { name: "Git", type: "Tool" },
-    { name: "Figma", type: "Design" },
+    { name: "Dart", type: "Language", category: "Languages" },
+    { name: "Flutter", type: "Framework", category: "Mobile" },
+    { name: "React Native", type: "Framework", category: "Mobile" },
+    { name: "Python", type: "Language", category: "Languages" },
+    { name: "C", type: "Language", category: "Languages" },
+    { name: "Firebase", type: "Backend", category: "Backend & Tools" },
+    { name: "REST APIs", type: "Integration", category: "Backend & Tools" },
+    { name: "SQLite", type: "Database", category: "Backend & Tools" },
+    { name: "Git", type: "Tool", category: "Backend & Tools" },
+    { name: "Figma", type: "Design", category: "Backend & Tools" },
   ];
 
+  const categories = ["All", "Mobile", "Languages", "Backend & Tools"];
+
   const bgColors = ["#fff9d2", "#bfddf0", "#8cc0eb", "#ffebcc"];
+
+  const filteredSkills = activeCategory === "All"
+    ? skills
+    : skills.filter((s) => s.category === activeCategory);
 
   const getIcon = (name) => {
     const defaultStyle = "w-8 h-8 text-[#0f172a] mb-3 transition-transform group-hover:scale-110";
@@ -88,67 +97,67 @@ function Skills() {
     }
   };
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.08,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.9, y: 15 },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
-      y: 0,
-      transition: { type: "spring", stiffness: 180, damping: 15 } 
-    },
-  };
-
   return (
     <section id="skills" className="sketch-section py-24 px-6 bg-[#fff9d2] overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <motion.div 
-          className="mb-14"
+          className="mb-10 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-[#8cc0eb] font-bold">Core capabilities</p>
-          <h2 className="handwritten scribble-title mt-4 text-4xl font-bold text-[#0f172a]">Skills</h2>
-          <p className="mt-4 max-w-2xl text-[#475569] text-base sm:text-lg">
-            I specialize in cross-platform mobile apps, modern UI, and AI-enabled product features.
+          <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-[#8cc0eb] font-extrabold">Core Capabilities</p>
+          <h2 className="handwritten scribble-title mt-4 text-4xl sm:text-5xl font-bold text-[#0f172a]">Technical Stack</h2>
+          <p className="mt-4 mx-auto max-w-2xl text-[#475569] text-base sm:text-lg">
+            Specialized across cross-platform mobile frameworks, machine learning models, and production integrations.
           </p>
         </motion.div>
 
-        <motion.div 
-          className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              variants={itemVariants}
-              style={{ backgroundColor: bgColors[index % bgColors.length] }}
-              className="depth-card rounded-[2rem] p-6 flex flex-col items-center justify-center text-center cursor-pointer group select-none transition-shadow hover:shadow-[0_12px_24px_rgba(15,23,42,0.06)]"
-              whileHover={{ 
-                scale: 1.05, 
-                rotate: index % 2 === 0 ? 1 : -1,
-                y: -4 
-              }}
+        {/* Category Filters */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-12">
+          {categories.map((cat) => (
+            <motion.button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              className={`px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-wider transition cursor-pointer ${
+                activeCategory === cat
+                  ? "bg-[#0f172a] text-white shadow-md"
+                  : "bg-white/80 text-[#0f172a] border border-[#0f172a]/10 hover:bg-[#bfddf0]"
+              }`}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {getIcon(skill.name)}
-              <p className="handwritten text-lg font-bold text-[#0f172a] leading-none mb-1">{skill.name}</p>
-              <span className="text-[10px] uppercase tracking-widest text-[#475569]/80 font-bold font-sans">{skill.type}</span>
-            </motion.div>
+              {cat}
+            </motion.button>
           ))}
+        </div>
+
+        <motion.div layout className="grid gap-6 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5">
+          <AnimatePresence mode="popLayout">
+            {filteredSkills.map((skill, index) => (
+              <motion.div
+                key={skill.name}
+                layout
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.3 }}
+                style={{ backgroundColor: bgColors[index % bgColors.length] }}
+                className="depth-card rounded-[2rem] p-6 flex flex-col items-center justify-center text-center cursor-pointer group select-none transition-shadow hover:shadow-[0_16px_30px_rgba(15,23,42,0.08)]"
+                whileHover={{ 
+                  scale: 1.06, 
+                  rotate: index % 2 === 0 ? 1.5 : -1.5,
+                  y: -5 
+                }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {getIcon(skill.name)}
+                <p className="handwritten text-xl font-extrabold text-[#0f172a] leading-none mb-1">{skill.name}</p>
+                <span className="text-[10px] uppercase tracking-widest text-[#475569] font-extrabold font-sans mt-1">{skill.type}</span>
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </motion.div>
       </div>
     </section>
