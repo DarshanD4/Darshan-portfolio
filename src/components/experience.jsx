@@ -1,16 +1,19 @@
 import { motion } from "framer-motion";
+import bytecraftLogo from "../assets/bytecraft_logo.png";
 
 function Experience() {
   const timeline = [
     {
       role: "App Developer Intern",
-      company: "Bytecrafts Studios India",
+      company: "Bytecraft Studios",
+      companyUrl: "https://bytecraftstudios.in/",
+      logo: bytecraftLogo,
       period: "2026 – Present",
       isCurrent: true,
       details: [
-        "Developing high-performance cross-platform mobile and web application features using Flutter and React Native.",
-        "Collaborating with UI/UX designers and core engineering team to deliver modular, high-impact features.",
-        "Optimizing state management, API integrations, and asset pipelines for fast load times and clean user experience.",
+        "Developing high-performance cross-platform mobile application features using Flutter and React Native.",
+        "Collaborating with UI/UX designers and core engineering team to deliver modular, high-impact mobile app features.",
+        "Optimizing state management, API integrations, and mobile application performance for fast load times and fluid UI.",
       ],
     },
     {
@@ -50,7 +53,7 @@ function Experience() {
           <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-[#8cc0eb] font-bold">Experience & Roles</p>
           <h2 className="handwritten scribble-title mt-4 text-4xl sm:text-5xl font-bold text-[#0f172a]">My Journey</h2>
           <p className="mt-4 mx-auto max-w-2xl text-[#475569] text-base sm:text-lg">
-            A track record of industry internships and AI product development across mobile & full-stack environments.
+            A track record of mobile app development internships and AI product execution.
           </p>
         </motion.div>
 
@@ -72,18 +75,48 @@ function Experience() {
                 className="layered-card rounded-[2rem] p-6 sm:p-8 transition-all hover:shadow-[0_20px_35px_rgba(15,23,42,0.08)] cursor-pointer"
                 style={{ backgroundColor: index % 2 === 0 ? '#ffffff' : '#bfddf0' }}
               >
-                <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between border-b border-[#0f172a]/10 pb-4">
-                  <div>
-                    <div className="flex items-center gap-3 flex-wrap">
-                      <h3 className="handwritten text-2xl sm:text-3xl font-extrabold text-[#0f172a]">{item.role}</h3>
-                      {item.isCurrent && (
-                        <span className="px-3 py-1 rounded-full bg-[#8cc0eb] text-[#0f172a] text-[10px] font-black uppercase tracking-wider shadow-sm flex items-center gap-1.5">
-                          <span className="w-2 h-2 rounded-full bg-[#0f172a] animate-ping" />
-                          Current Role
-                        </span>
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-[#0f172a]/10 pb-4">
+                  <div className="flex items-start gap-4">
+                    {item.logo && (
+                      <a 
+                        href={item.companyUrl} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="shrink-0 transition transform hover:scale-105"
+                      >
+                        <img 
+                          src={item.logo} 
+                          alt={`${item.company} logo`} 
+                          className="h-12 w-auto max-w-[120px] object-contain rounded-lg border border-[#0f172a]/10 bg-black p-1.5 shadow-xs" 
+                        />
+                      </a>
+                    )}
+                    <div>
+                      <div className="flex items-center gap-3 flex-wrap">
+                        <h3 className="handwritten text-2xl sm:text-3xl font-extrabold text-[#0f172a]">{item.role}</h3>
+                        {item.isCurrent && (
+                          <span className="px-3 py-1 rounded-full bg-[#8cc0eb] text-[#0f172a] text-[10px] font-black uppercase tracking-wider shadow-xs flex items-center gap-1.5">
+                            <span className="w-2 h-2 rounded-full bg-[#0f172a] animate-ping" />
+                            Current Role
+                          </span>
+                        )}
+                      </div>
+                      {item.companyUrl ? (
+                        <a
+                          href={item.companyUrl}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="inline-flex items-center gap-1 text-[#8cc0eb] hover:text-[#0f172a] font-extrabold text-base sm:text-lg mt-0.5 transition underline decoration-[#8cc0eb]/50"
+                        >
+                          <span>{item.company}</span>
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                          </svg>
+                        </a>
+                      ) : (
+                        <p className="text-[#8cc0eb] font-extrabold text-base sm:text-lg mt-0.5">{item.company}</p>
                       )}
                     </div>
-                    <p className="text-[#8cc0eb] font-extrabold text-base sm:text-lg mt-0.5">{item.company}</p>
                   </div>
                   <span className="inline-block px-4 py-1.5 rounded-full bg-[#0f172a]/10 text-[11px] font-extrabold tracking-widest text-[#0f172a] uppercase self-start sm:self-center shadow-xs">
                     {item.period}

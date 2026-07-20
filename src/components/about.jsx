@@ -43,13 +43,13 @@ function About() {
               className="handwritten text-lg sm:text-xl leading-relaxed text-[#475569]"
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
             >
-              I am an App Developer Intern at Bytecrafts Studios India and a full-stack mobile developer specializing in building scalable, intelligence-driven applications. Using tools like Flutter, React Native, and Firebase, I translate intricate product ideas into beautiful, production-ready experiences.
+              I am an App Developer Intern at <a href="https://bytecraftstudios.in/" target="_blank" rel="noreferrer" className="font-extrabold text-[#0f172a] underline decoration-[#8cc0eb] hover:text-[#8cc0eb] transition">Bytecraft Studios</a> and a mobile developer specializing in building scalable, intelligence-driven mobile applications. Using tools like Flutter, React Native, and Firebase, I translate intricate product ideas into beautiful, production-ready mobile experiences.
             </motion.p>
             <motion.p 
               className="text-base sm:text-lg leading-relaxed text-[#475569]"
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } }}
             >
-              I focus on designing intuitive, responsive layouts and integrating smart AI features. My goal is to build high-performance MVPs that help engineering teams collaborate and launch high-impact products.
+              I focus on designing intuitive, responsive mobile UI layouts and integrating smart AI features. My goal is to build high-performance mobile MVPs that help engineering teams collaborate and launch high-impact mobile products.
             </motion.p>
             <motion.p 
               className="text-base sm:text-lg leading-relaxed text-[#475569]"
@@ -74,7 +74,7 @@ function About() {
                 </svg>
                 <p className="text-xs uppercase tracking-[0.25em] text-[#475569] font-bold">Experience</p>
               </div>
-              <p className="text-base font-bold text-[#0f172a] leading-snug">Bytecrafts Studios Intern, React Native, Flutter, Firebase</p>
+              <p className="text-base font-bold text-[#0f172a] leading-snug">Bytecraft Studios Intern, React Native, Flutter, Firebase</p>
             </motion.div>
 
             <motion.div 
@@ -110,7 +110,7 @@ function About() {
             <div>
               <p className="text-xs uppercase tracking-[0.35em] text-[#8cc0eb] font-bold">Current Snapshot</p>
               <p className="mt-4 text-base sm:text-lg leading-relaxed text-[#475569]">
-                Currently interning at <strong className="text-[#0f172a]">Bytecrafts Studios India</strong>, applying AI-first thinking and rapid mobile iteration to build modern applications.
+                Currently interning at <a href="https://bytecraftstudios.in/" target="_blank" rel="noreferrer" className="font-extrabold text-[#0f172a] underline decoration-[#8cc0eb] hover:text-[#8cc0eb] transition">Bytecraft Studios</a>, applying AI-first thinking and rapid mobile iteration to build modern mobile apps.
               </p>
             </div>
             

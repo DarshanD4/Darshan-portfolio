@@ -92,14 +92,20 @@ function Hero() {
             className="mt-6 flex flex-wrap justify-center lg:justify-start gap-3 items-center"
             variants={itemVariants}
           >
-            <motion.span 
-              className="hero-tag cursor-default"
+            <motion.a 
+              href="https://bytecraftstudios.in/"
+              target="_blank"
+              rel="noreferrer"
+              className="hero-tag cursor-pointer hover:border-[#0f172a]"
               whileHover={{ scale: 1.05, rotate: 1 }}
               whileTap={{ scale: 0.95 }}
             >
               <span className="w-2.5 h-2.5 rounded-full bg-[#0f172a] animate-pulse" />
-              Intern @ Bytecrafts Studios India
-            </motion.span>
+              <span>Intern @ Bytecraft Studios</span>
+              <svg className="w-3.5 h-3.5 text-[#0f172a]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </motion.a>
 
             <motion.span 
               className="px-4 py-3 rounded-full bg-[#bfddf0]/60 border border-[#8cc0eb]/60 text-[#0f172a] font-bold text-xs uppercase tracking-wider cursor-default shadow-xs"
