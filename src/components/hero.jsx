@@ -8,177 +8,132 @@ function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.12,
         delayChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  };
-
-  const imageVariants = {
-    hidden: { opacity: 0, scale: 0.95 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: "easeOut" } },
-  };
-
-  const titleText = "Building scalable cross-platform products with AI, Flutter, and React Native.";
-  const titleWords = titleText.split(" ");
-
-  const descText = "I build high-performance mobile apps and intelligent system integrations, connecting elegant, user-centric interfaces with robust backend architectures. Focused on delivering premium digital experiences through clean code, design precision, and scalable model-driven features that perform flawlessly at launch. Whether designing fluid interfaces or fine-tuning underlying performance metrics, I prioritize user engagement and code excellence in every line I write.";
-  const descWords = descText.split(" ");
-
-  const titleContainerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.03,
-      },
-    },
-  };
-
-  const wordVariants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
   };
 
   return (
     <section
       id="hero"
-      className="relative sketch-section min-h-screen flex items-center bg-[radial-gradient(circle_at_top,_rgba(255,249,210,0.95),_transparent_35%),linear-gradient(180deg,_#fff9d2_0%,_#ffebcc_100%)] px-6 overflow-hidden"
+      className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-8 overflow-hidden"
     >
-      <div className="hero-splash blue" />
-      <div className="hero-splash peach" />
+      {/* Subtle Background Glows */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-sky-400/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-rose-400/5 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <motion.div 
-        className="max-w-6xl mx-auto grid gap-12 lg:grid-cols-2 items-center py-12"
+        className="max-w-6xl mx-auto w-full grid gap-12 lg:grid-cols-12 items-center"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
-        <div className="text-center lg:text-left flex flex-col items-center lg:items-start">
-          <motion.p 
-            className="mb-4 text-xs sm:text-sm uppercase tracking-[0.35em] text-[#8cc0eb] font-bold"
-            variants={itemVariants}
-          >
-            AI-driven mobile application developer
-          </motion.p>
-
-          <motion.h1 
-            className="handwritten scribble-title responsive-heading text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-[#0f172a] flex flex-wrap justify-center lg:justify-start"
-            variants={titleContainerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {titleWords.map((word, i) => (
-              <motion.span
-                key={i}
-                variants={wordVariants}
-                className="inline-block mr-[0.25em]"
-              >
-                {word}
-              </motion.span>
-            ))}
-          </motion.h1>
-
-          <motion.div 
-            className="mt-6 flex flex-wrap justify-center lg:justify-start gap-3 items-center"
-            variants={itemVariants}
-          >
-            <motion.a 
+        {/* Left Content Column */}
+        <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
+          {/* Status Badge */}
+          <motion.div variants={itemVariants} className="mb-6 flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
+            <a
               href="https://bytecraftstudios.in/"
               target="_blank"
               rel="noreferrer"
-              className="hero-tag cursor-pointer hover:border-[#0f172a]"
-              whileHover={{ scale: 1.05, rotate: 1 }}
-              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-semibold shadow-xs hover:bg-slate-800 transition"
             >
-              <span className="w-2.5 h-2.5 rounded-full bg-[#0f172a] animate-pulse" />
-              <span>Intern @ Bytecraft Studios</span>
-              <svg className="w-3.5 h-3.5 text-[#0f172a]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+              <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
+              <span>App Developer Intern @ Bytecraft Studios</span>
+              <svg className="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
-            </motion.a>
+            </a>
 
-            <motion.span 
-              className="px-4 py-3 rounded-full bg-[#bfddf0]/60 border border-[#8cc0eb]/60 text-[#0f172a] font-bold text-xs uppercase tracking-wider cursor-default shadow-xs"
-              whileHover={{ scale: 1.05, rotate: -1 }}
-            >
-              AI + Mobile Product Design
-            </motion.span>
+            <span className="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200/80 text-xs font-semibold text-slate-600">
+              Mobile + AI Systems
+            </span>
           </motion.div>
 
-          <motion.p 
-            className="handwritten mt-8 mx-auto max-w-2xl text-lg leading-8 text-[#475569] lg:mx-0 text-center lg:text-left flex flex-wrap justify-center lg:justify-start"
-            variants={titleContainerVariants}
-            initial="hidden"
-            animate="visible"
+          {/* Main Headline */}
+          <motion.h1 
+            variants={itemVariants}
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12]"
           >
-            {descWords.map((word, i) => (
-              <motion.span
-                key={i}
-                variants={wordVariants}
-                className="inline-block mr-[0.22em]"
-              >
-                {word}
-              </motion.span>
-            ))}
+            Building high-performance <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600">mobile applications</span> & AI products.
+          </motion.h1>
+
+          {/* Description */}
+          <motion.p 
+            variants={itemVariants}
+            className="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed font-normal"
+          >
+            Specialized in engineering robust cross-platform mobile apps with Flutter and React Native, integrated with machine learning models and cloud backends. Dedicated to crafting fluid user interfaces, clean architectures, and scalable digital products.
           </motion.p>
 
-          {/* Action CTAs */}
+          {/* Call to Actions */}
           <motion.div 
-            className="mt-8 flex flex-wrap justify-center lg:justify-start gap-4 items-center"
             variants={itemVariants}
+            className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3.5 w-full sm:w-auto"
           >
-            <motion.a
+            <a
               href="#projects"
-              className="rounded-full bg-[#0f172a] text-white px-7 py-3.5 text-sm font-extrabold shadow-md hover:bg-[#0f172a]/90 flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold shadow-sm hover:shadow-md transition"
             >
               <span>Explore Projects</span>
-              <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
-            </motion.a>
+            </a>
 
-            <motion.a
+            <a
               href="#contact"
-              className="rounded-full bg-white text-[#0f172a] border-2 border-[#0f172a] px-7 py-3 text-sm font-extrabold shadow-sm hover:bg-[#fff9d2] flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 text-sm font-bold shadow-xs hover:shadow-sm transition"
             >
-              <span>Contact Me</span>
-              <svg className="w-4 h-4 text-[#0f172a]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+              <span>Get in Touch</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </motion.a>
+            </a>
+          </motion.div>
+
+          {/* Tech Stack Pills */}
+          <motion.div 
+            variants={itemVariants}
+            className="mt-10 pt-6 border-t border-slate-200/70 flex items-center gap-2 flex-wrap justify-center lg:justify-start"
+          >
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-400 mr-2">Core Tech:</span>
+            {["Flutter", "React Native", "Dart", "Python", "Firebase", "TensorFlow"].map((tech) => (
+              <span key={tech} className="tech-tag">
+                {tech}
+              </span>
+            ))}
           </motion.div>
         </div>
 
+        {/* Right Interactive Profile Column */}
         <motion.div 
-          className="relative mx-auto max-w-[280px] lg:justify-self-end z-10 w-full pt-4"
-          variants={imageVariants}
+          variants={itemVariants}
+          className="lg:col-span-5 flex justify-center lg:justify-end"
         >
-          <ProfileCard
-            avatarUrl={heroImage}
-            name="Darshan M P"
-            title="App Developer @ Bytecrafts"
-            handle="DarshanD4"
-            status="Interning @ Bytecrafts"
-            contactText="WhatsApp Me"
-            onContactClick={() => window.open("https://wa.me/918610068665", "_blank")}
-            behindGlowEnabled={true}
-            behindGlowColor="rgba(140, 192, 235, 0.4)"
-            enableTilt={true}
-          />
+          <div className="relative w-full max-w-[300px]">
+            <ProfileCard
+              avatarUrl={heroImage}
+              name="Darshan M P"
+              title="Mobile & AI Developer"
+              handle="DarshanD4"
+              status="Intern @ Bytecraft Studios"
+              contactText="Connect"
+              onContactClick={() => {
+                const el = document.getElementById("contact");
+                if (el) el.scrollIntoView({ behavior: "smooth" });
+              }}
+              behindGlowEnabled={true}
+              behindGlowColor="rgba(56, 189, 248, 0.3)"
+              enableTilt={true}
+            />
+          </div>
         </motion.div>
       </motion.div>
     </section>

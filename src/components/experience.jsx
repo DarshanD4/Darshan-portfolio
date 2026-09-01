@@ -10,124 +10,140 @@ function Experience() {
       logo: bytecraftLogo,
       period: "2026 – Present",
       isCurrent: true,
+      type: "Internship",
       details: [
-        "Developing high-performance cross-platform mobile application features using Flutter and React Native.",
-        "Collaborating with UI/UX designers and core engineering team to deliver modular, high-impact mobile app features.",
-        "Optimizing state management, API integrations, and mobile application performance for fast load times and fluid UI.",
-      ],
-    },
-    {
-      role: "App Developer Intern",
-      company: "Finance App",
-      period: "2024",
-      isCurrent: false,
-      details: [
-        "Built a cross-platform personal finance tracker with 8+ core screens using Flutter.",
-        "Designed UI/UX in Figma and delivered an MVP in 2 days.",
-        "Debugged and optimized the app to reduce performance lag during testing.",
+        "Developing high-performance cross-platform mobile applications utilizing Flutter and React Native.",
+        "Collaborating with product managers and UI/UX designers to architect modular, maintainable client features.",
+        "Optimizing application state management, network caching, and asset pipelines for fast load times and fluid 60fps UI.",
       ],
     },
     {
       role: "AI Model Developer",
       company: "LipSync Deepfake Detection",
+      companyUrl: "https://github.com/dharun18vk/cross_model_forgery",
       period: "2026",
       isCurrent: false,
+      type: "AI Research & Development",
       details: [
-        "Designed a CNN-based lip-sync manipulation detection model.",
-        "Achieved 85% accuracy using spatial and temporal modeling techniques.",
-        "Added multi-factor metadata validation for stronger verification.",
+        "Architected a deep learning CNN model engineered for audio-visual synchronization manipulation detection.",
+        "Attained verified 85% detection accuracy using combined spatial feature extraction and temporal modeling.",
+        "Implemented multi-factor metadata validation pipelines for robust forgery classification.",
+      ],
+    },
+    {
+      role: "App Developer Intern",
+      company: "Finance App",
+      companyUrl: "https://github.com/DarshanD4/PersonalFinanceTracker",
+      period: "2024",
+      isCurrent: false,
+      type: "Mobile Engineering",
+      details: [
+        "Engineered a cross-platform personal finance tracker featuring 8+ custom responsive screens in Flutter.",
+        "Built interactive charting, local SQLite caching, and real-time Firebase authentication.",
+        "Delivered a rapid 2-day MVP turnaround from initial Figma UI design to production APK.",
       ],
     },
   ];
 
   return (
-    <section id="experience" className="sketch-section py-24 px-6 bg-[#fff9d2] overflow-hidden">
+    <section id="experience" className="py-24 px-4 sm:px-8 bg-white border-t border-slate-200/70">
       <div className="max-w-4xl mx-auto">
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <p className="text-xs sm:text-sm uppercase tracking-[0.35em] text-[#8cc0eb] font-bold">Experience & Roles</p>
-          <h2 className="handwritten scribble-title mt-4 text-4xl sm:text-5xl font-bold text-[#0f172a]">My Journey</h2>
-          <p className="mt-4 mx-auto max-w-2xl text-[#475569] text-base sm:text-lg">
-            A track record of mobile app development internships and AI product execution.
+        {/* Section Header */}
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <span className="text-xs font-bold uppercase tracking-widest text-sky-600">
+            Career & Roles
+          </span>
+          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+            Work Experience
+          </h2>
+          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            A track record of mobile engineering roles, production internships, and AI research projects.
           </p>
-        </motion.div>
+        </div>
 
-        {/* Dotted Timeline Path */}
-        <div className="relative border-l-4 border-dashed border-[#8cc0eb]/50 ml-4 sm:ml-8 pl-8 sm:pl-12 space-y-12 text-left">
+        {/* Modern Vertical Timeline */}
+        <div className="relative border-l-2 border-slate-200 ml-4 sm:ml-8 pl-6 sm:pl-10 space-y-10">
           {timeline.map((item, index) => (
             <motion.div
               key={`${item.company}-${item.role}`}
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.6, delay: index * 0.12 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative"
             >
-              {/* Timeline dot marker */}
-              <span className={`absolute -left-[42px] sm:-left-[58px] top-6 flex h-6 w-6 items-center justify-center rounded-full border-4 ${item.isCurrent ? 'border-[#0f172a] bg-[#8cc0eb] animate-pulse' : 'border-[#8cc0eb] bg-[#fff9d2]'} shadow-sm ring-8 ring-[#fff9d2]`} />
+              {/* Timeline Indicator Dot */}
+              <span
+                className={`absolute -left-[31px] sm:-left-[47px] top-6 flex h-4 w-4 items-center justify-center rounded-full ${
+                  item.isCurrent
+                    ? "bg-sky-500 ring-4 ring-sky-100 ring-offset-2 ring-offset-white"
+                    : "bg-slate-300 ring-4 ring-slate-100"
+                }`}
+              />
 
-              <div
-                className="layered-card rounded-[2rem] p-6 sm:p-8 transition-all hover:shadow-[0_20px_35px_rgba(15,23,42,0.08)] cursor-pointer"
-                style={{ backgroundColor: index % 2 === 0 ? '#ffffff' : '#bfddf0' }}
-              >
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-[#0f172a]/10 pb-4">
+              {/* Card Container */}
+              <div className="pro-card p-6 sm:p-8 bg-slate-50/50 hover:bg-white transition-all">
+                {/* Header row */}
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/80 pb-5">
                   <div className="flex items-start gap-4">
                     {item.logo && (
-                      <a 
-                        href={item.companyUrl} 
-                        target="_blank" 
-                        rel="noreferrer" 
-                        className="shrink-0 transition transform hover:scale-105"
+                      <a
+                        href={item.companyUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="shrink-0 transition-transform hover:scale-105"
                       >
-                        <img 
-                          src={item.logo} 
-                          alt={`${item.company} logo`} 
-                          className="h-12 w-auto max-w-[120px] object-contain rounded-lg border border-[#0f172a]/10 bg-black p-1.5 shadow-xs" 
+                        <img
+                          src={item.logo}
+                          alt={`${item.company} logo`}
+                          className="h-10 sm:h-12 w-auto max-w-[120px] object-contain rounded-xl bg-slate-900 p-2 border border-slate-800 shadow-xs"
                         />
                       </a>
                     )}
                     <div>
-                      <div className="flex items-center gap-3 flex-wrap">
-                        <h3 className="handwritten text-2xl sm:text-3xl font-extrabold text-[#0f172a]">{item.role}</h3>
+                      <div className="flex items-center gap-2.5 flex-wrap">
+                        <h3 className="text-xl font-bold text-slate-900">{item.role}</h3>
                         {item.isCurrent && (
-                          <span className="px-3 py-1 rounded-full bg-[#8cc0eb] text-[#0f172a] text-[10px] font-black uppercase tracking-wider shadow-xs flex items-center gap-1.5">
-                            <span className="w-2 h-2 rounded-full bg-[#0f172a] animate-ping" />
-                            Current Role
+                          <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-sky-50 border border-sky-200 text-[11px] font-bold text-sky-700">
+                            <span className="w-1.5 h-1.5 rounded-full bg-sky-500 animate-pulse" />
+                            Current
                           </span>
                         )}
                       </div>
-                      {item.companyUrl ? (
-                        <a
-                          href={item.companyUrl}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="inline-flex items-center gap-1 text-[#8cc0eb] hover:text-[#0f172a] font-extrabold text-base sm:text-lg mt-0.5 transition underline decoration-[#8cc0eb]/50"
-                        >
-                          <span>{item.company}</span>
-                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                          </svg>
-                        </a>
-                      ) : (
-                        <p className="text-[#8cc0eb] font-extrabold text-base sm:text-lg mt-0.5">{item.company}</p>
-                      )}
+
+                      <div className="mt-1 flex items-center gap-2 text-sm">
+                        {item.companyUrl ? (
+                          <a
+                            href={item.companyUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex items-center gap-1 font-semibold text-sky-600 hover:text-sky-700 transition"
+                          >
+                            <span>{item.company}</span>
+                            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </a>
+                        ) : (
+                          <span className="font-semibold text-slate-700">{item.company}</span>
+                        )}
+                        <span className="text-slate-300">•</span>
+                        <span className="text-slate-500 font-medium">{item.type}</span>
+                      </div>
                     </div>
                   </div>
-                  <span className="inline-block px-4 py-1.5 rounded-full bg-[#0f172a]/10 text-[11px] font-extrabold tracking-widest text-[#0f172a] uppercase self-start sm:self-center shadow-xs">
+
+                  <span className="self-start sm:self-center px-3 py-1 rounded-lg bg-slate-100 border border-slate-200 text-xs font-bold text-slate-600">
                     {item.period}
                   </span>
                 </div>
 
-                <ul className="mt-6 space-y-3 text-[#475569] text-sm sm:text-base">
+                {/* Details list */}
+                <ul className="mt-5 space-y-2.5 text-slate-600 text-sm leading-relaxed">
                   {item.details.map((detail, idx) => (
-                    <li key={idx} className="flex items-start gap-3 leading-relaxed font-medium">
-                      <svg className="w-5 h-5 text-[#8cc0eb] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"></path>
+                    <li key={idx} className="flex items-start gap-2.5">
+                      <svg className="w-4 h-4 text-sky-500 shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                       </svg>
                       <span>{detail}</span>
                     </li>

@@ -338,16 +338,16 @@ const ProfileCardComponent = ({
                       color: "#fff"
                     }}
                   >
-                    <div style={{ textAlign: "center", fontFamily: "sans-serif" }}>
-                      <p style={{ color: "#8cc0eb", fontWeight: "bold", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", margin: 0 }}>About Me</p>
-                      <p style={{ fontSize: "0.75rem", color: "rgba(255, 255, 255, 0.9)", lineHeight: "1.6", marginTop: "1rem", marginBottom: 0 }}>
-                        AI-driven mobile developer. Proficient in Flutter, React Native, Firebase, and CNN architectures.
+                    <div style={{ textAlign: "center", fontFamily: "inherit" }}>
+                      <p style={{ color: "#38bdf8", fontWeight: "700", fontSize: "0.75rem", textTransform: "uppercase", letterSpacing: "0.15em", margin: 0 }}>Darshan MP</p>
+                      <p style={{ fontSize: "0.75rem", color: "rgba(255, 255, 255, 0.9)", lineHeight: "1.6", marginTop: "0.75rem", marginBottom: 0 }}>
+                        Cross-platform mobile developer & AI engineer. Specialized in Flutter, React Native, Firebase, and deep learning architectures.
                       </p>
                     </div>
                   </div>
                 }
                 gridSize={10}
-                pixelColor="#8cc0eb"
+                pixelColor="#38bdf8"
                 once={false}
                 animationStepDuration={0.4}
                 aspectRatio="139.27%"
