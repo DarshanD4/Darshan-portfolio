@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import heroImage from "../assets/1.jpg";
 import ProfileCard from "./ProfileCard";
+import { useTheme } from "../context/ThemeContext";
 
 function Hero() {
+  const { activeInfo, isNight } = useTheme();
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -24,10 +27,6 @@ function Hero() {
       id="hero"
       className="relative min-h-[90vh] flex items-center justify-center pt-28 pb-16 px-4 sm:px-8 overflow-hidden"
     >
-      {/* Subtle Background Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-sky-400/10 rounded-full blur-3xl pointer-events-none -z-10" />
-      <div className="absolute top-1/3 right-10 w-[300px] h-[300px] bg-rose-400/5 rounded-full blur-3xl pointer-events-none -z-10" />
-
       <motion.div 
         className="max-w-6xl mx-auto w-full grid gap-12 lg:grid-cols-12 items-center"
         variants={containerVariants}
@@ -42,32 +41,32 @@ function Hero() {
               href="https://bytecraftstudios.in/"
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 text-white text-xs font-semibold shadow-xs hover:bg-slate-800 transition"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 dark:bg-slate-800 text-white text-xs font-semibold shadow-xs hover:bg-slate-800 dark:hover:bg-slate-700 border border-slate-800 dark:border-slate-700 transition"
             >
               <span className="w-2 h-2 rounded-full bg-sky-400 animate-pulse" />
-              <span>App Developer Intern @ Bytecraft Studios</span>
+              <span>Flutter Developer Intern @ ByteCraft Studios</span>
               <svg className="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
 
-            <span className="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200/80 text-xs font-semibold text-slate-600">
-              Mobile + AI Systems
+            <span className="hidden sm:inline-flex items-center px-3 py-1.5 rounded-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700 text-xs font-semibold text-slate-600 dark:text-slate-300">
+              Mobile & AI Systems
             </span>
           </motion.div>
 
           {/* Main Headline */}
           <motion.h1 
             variants={itemVariants}
-            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.12]"
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]"
           >
-            Building high-performance <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-indigo-600">mobile applications</span> & AI products.
+            Building high-performance <span className="text-transparent bg-clip-text bg-gradient-to-r from-sky-600 via-indigo-500 to-sky-400 dark:from-sky-400 dark:to-indigo-300">mobile applications</span> & AI products.
           </motion.h1>
 
           {/* Description */}
           <motion.p 
             variants={itemVariants}
-            className="mt-6 text-base sm:text-lg text-slate-600 max-w-2xl leading-relaxed font-normal"
+            className="mt-6 text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed font-normal"
           >
             Specialized in engineering robust cross-platform mobile apps with Flutter and React Native, integrated with machine learning models and cloud backends. Dedicated to crafting fluid user interfaces, clean architectures, and scalable digital products.
           </motion.p>
@@ -79,7 +78,7 @@ function Hero() {
           >
             <a
               href="#projects"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-sm font-bold shadow-sm hover:shadow-md transition"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-900 dark:bg-sky-500 hover:bg-slate-800 dark:hover:bg-sky-600 text-white text-sm font-bold shadow-sm hover:shadow-md transition"
             >
               <span>Explore Projects</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -89,7 +88,7 @@ function Hero() {
 
             <a
               href="#contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 text-sm font-bold shadow-xs hover:shadow-sm transition"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 text-sm font-bold shadow-xs hover:shadow-sm transition"
             >
               <span>Get in Touch</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -101,7 +100,7 @@ function Hero() {
           {/* Tech Stack Pills */}
           <motion.div 
             variants={itemVariants}
-            className="mt-10 pt-6 border-t border-slate-200/70 flex items-center gap-2 flex-wrap justify-center lg:justify-start"
+            className="mt-10 pt-6 border-t border-slate-200/70 dark:border-slate-800 flex items-center gap-2 flex-wrap justify-center lg:justify-start"
           >
             <span className="text-xs font-bold uppercase tracking-wider text-slate-400 mr-2">Core Tech:</span>
             {["Flutter", "React Native", "Dart", "Python", "Firebase", "TensorFlow"].map((tech) => (
@@ -121,16 +120,16 @@ function Hero() {
             <ProfileCard
               avatarUrl={heroImage}
               name="Darshan M P"
-              title="Mobile & AI Developer"
+              title="Flutter & AI Developer"
               handle="DarshanD4"
-              status="Intern @ Bytecraft Studios"
+              status="Intern @ ByteCraft Studios"
               contactText="Connect"
               onContactClick={() => {
                 const el = document.getElementById("contact");
                 if (el) el.scrollIntoView({ behavior: "smooth" });
               }}
               behindGlowEnabled={true}
-              behindGlowColor="rgba(56, 189, 248, 0.3)"
+              behindGlowColor={activeInfo.colorHex}
               enableTilt={true}
             />
           </div>

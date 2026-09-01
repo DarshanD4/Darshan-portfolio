@@ -41,17 +41,17 @@ function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 px-4 sm:px-8 bg-slate-50/70 border-t border-slate-200/70">
+    <section id="projects" className="py-24 px-4 sm:px-8 bg-slate-50/60 dark:bg-slate-900/40 border-t border-slate-200/70 dark:border-slate-800 transition-colors duration-500">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-widest text-sky-600">
+          <span className="text-xs font-bold uppercase tracking-widest text-sky-600 dark:text-sky-400">
             Featured Portfolio
           </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Selected Projects
           </h2>
-          <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+          <p className="mt-4 text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
             A showcase of production-ready mobile applications, machine learning architectures, and interactive software.
           </p>
         </div>
@@ -65,24 +65,24 @@ function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="pro-card p-7 sm:p-8 bg-white flex flex-col justify-between"
+              className="pro-card p-7 sm:p-8 flex flex-col justify-between"
             >
               <div>
                 {/* Category & Highlight Pill */}
                 <div className="flex items-center justify-between gap-2 mb-4">
-                  <span className="text-xs font-bold uppercase tracking-wider text-sky-600">
+                  <span className="text-xs font-bold uppercase tracking-wider text-sky-600 dark:text-sky-400">
                     {project.category}
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-slate-100 border border-slate-200 text-[11px] font-semibold text-slate-600">
+                  <span className="px-2.5 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-[11px] font-semibold text-slate-600 dark:text-slate-300">
                     {project.highlight}
                   </span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-slate-900 mb-3 tracking-tight">
+                <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3 tracking-tight">
                   {project.title}
                 </h3>
 
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6 font-normal">
+                <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-6 font-normal">
                   {project.description}
                 </p>
 
@@ -97,15 +97,15 @@ function Projects() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
+              <div className="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
                 {project.demo && (
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold transition shadow-xs"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-sky-500 hover:bg-slate-800 dark:hover:bg-sky-600 text-white text-xs font-bold transition shadow-xs"
                   >
-                    <svg className="w-4 h-4 text-sky-400" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-sky-400 dark:text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
@@ -118,15 +118,15 @@ function Projects() {
                     href={project.code}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white hover:bg-slate-50 text-slate-900 border border-slate-200 text-xs font-bold transition shadow-2xs"
+                    className="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 text-xs font-bold transition shadow-2xs"
                   >
-                    <svg className="w-4 h-4 text-slate-700" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-slate-700 dark:text-slate-300" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                     <span>Source Code</span>
                   </a>
                 ) : (
-                  <span className="flex-1 text-center text-xs font-semibold text-slate-400 py-2.5">
+                  <span className="flex-1 text-center text-xs font-semibold text-slate-400 dark:text-slate-500 py-2.5">
                     Proprietary Startup Code
                   </span>
                 )}
