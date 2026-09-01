@@ -7,14 +7,17 @@ function Skills() {
   const skills = [
     { name: "Flutter", type: "Framework", category: "Mobile" },
     { name: "React Native", type: "Framework", category: "Mobile" },
+    { name: "Android & iOS", type: "Platforms", category: "Mobile" },
     { name: "Dart", type: "Language", category: "Languages" },
     { name: "Python", type: "Language", category: "Languages" },
     { name: "C", type: "Language", category: "Languages" },
-    { name: "Firebase", type: "Cloud Backend", category: "Backend & Cloud" },
+    { name: "Firebase Auth & Firestore", type: "Cloud Backend", category: "Backend & Cloud" },
     { name: "REST APIs", type: "Integration", category: "Backend & Cloud" },
     { name: "SQLite", type: "Database", category: "Backend & Cloud" },
+    { name: "Postman", type: "API Testing", category: "Tools & Design" },
     { name: "Git & GitHub", type: "Version Control", category: "Tools & Design" },
     { name: "Figma", type: "UI/UX Design", category: "Tools & Design" },
+    { name: "Android Studio & VS Code", type: "IDE & Tooling", category: "Tools & Design" },
   ];
 
   const categories = ["All", "Mobile", "Languages", "Backend & Cloud", "Tools & Design"];
