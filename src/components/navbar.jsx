@@ -68,7 +68,7 @@ function Navbar() {
             href="/MA_SD_Resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 dark:bg-sky-500 hover:bg-slate-800 dark:hover:bg-sky-600 text-white text-xs font-bold transition shadow-xs hover:shadow-sm"
+            className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-theme-primary text-xs font-bold transition shadow-xs hover:shadow-sm"
           >
             <span>Resume</span>
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
@@ -119,7 +119,7 @@ function Navbar() {
                 href="/MA_SD_Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-sky-500 text-white text-sm font-bold shadow-xs"
+                className="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl btn-theme-primary text-sm font-bold shadow-xs"
                 onClick={() => setMenuOpen(false)}
               >
                 <span>Download Resume</span>

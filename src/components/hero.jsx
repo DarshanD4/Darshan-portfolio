@@ -78,7 +78,7 @@ function Hero() {
           >
             <a
               href="#projects"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-slate-900 dark:bg-sky-500 hover:bg-slate-800 dark:hover:bg-sky-600 text-white text-sm font-bold shadow-sm hover:shadow-md transition"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl btn-theme-primary text-sm font-bold shadow-sm hover:shadow-md transition"
             >
               <span>Explore Projects</span>
               <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">

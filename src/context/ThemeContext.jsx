@@ -4,10 +4,9 @@ const ThemeContext = createContext();
 
 export const THEME_MODES = {
   MORNING: "morning", // 7:00 AM - 10:00 AM (#ffeaa7 + sky blue + white)
-  MIDDAY: "midday", // 10:00 AM - 12:00 PM (#fdcb6e + sky blue + white)
-  AFTERNOON: "afternoon", // 12:00 PM - 5:00 PM (sky blue + clean white)
-  SUNSET: "sunset", // 5:00 PM - 8:00 PM (sunset coral & twilight rose)
-  NIGHT: "night", // 8:00 PM - 7:00 AM (midnight dark mode)
+  MIDDAY: "midday", // 10:00 AM - 5:00 PM (#896C6C, #E5BEB5, #EEE6CA, #F5FAE1)
+  EVENING: "evening", // 5:00 PM - 8:00 PM (#EEB76B, #E2703A, #9C3D54, #310B0B)
+  NIGHT: "night", // 8:00 PM - 7:00 AM (#091540, #1B2CC1, #7692FF, #ABD2FA)
 };
 
 export const THEME_INFO = {
@@ -21,43 +20,37 @@ export const THEME_INFO = {
   },
   [THEME_MODES.MIDDAY]: {
     id: "midday",
-    label: "Midday Solar",
-    hours: "10 AM – 12 PM",
-    colorHex: "#fdcb6e",
+    label: "Midday Light",
+    hours: "10 AM – 5 PM",
+    colorHex: "#896C6C",
+    palette: ["#896C6C", "#E5BEB5", "#EEE6CA", "#F5FAE1"],
     emoji: "☀️",
-    description: "Vibrant golden warmth mixed with sky blue and white",
+    description: "Warm slate mocha, blush sand, cream, and sunny ivory",
   },
-  [THEME_MODES.AFTERNOON]: {
-    id: "afternoon",
-    label: "Afternoon Sky",
-    hours: "12 PM – 5 PM",
-    colorHex: "#74b9ff",
-    emoji: "🌤️",
-    description: "Clear azure sky blue and crisp daylight",
-  },
-  [THEME_MODES.SUNSET]: {
-    id: "sunset",
-    label: "Sunset Dusk",
+  [THEME_MODES.EVENING]: {
+    id: "evening",
+    label: "Evening Sunset",
     hours: "5 PM – 8 PM",
-    colorHex: "#e17055",
+    colorHex: "#E2703A",
+    palette: ["#EEB76B", "#E2703A", "#9C3D54", "#310B0B"],
     emoji: "🌇",
-    description: "Rich twilight coral, rose, and amber sunset",
+    description: "Golden amber, sunset orange, twilight burgundy, and deep dusk",
   },
   [THEME_MODES.NIGHT]: {
     id: "night",
     label: "Midnight Dark",
     hours: "8 PM – 7 AM",
-    colorHex: "#0f172a",
+    colorHex: "#7692FF",
+    palette: ["#091540", "#1B2CC1", "#7692FF", "#ABD2FA"],
     emoji: "🌙",
-    description: "Deep midnight indigo with glowing cyan accents",
+    description: "Midnight navy, electric cobalt, glowing periwinkle, and ice cyan",
   },
 };
 
 export const getThemeForHour = (hour) => {
   if (hour >= 7 && hour < 10) return THEME_MODES.MORNING;
-  if (hour >= 10 && hour < 12) return THEME_MODES.MIDDAY;
-  if (hour >= 12 && hour < 17) return THEME_MODES.AFTERNOON;
-  if (hour >= 17 && hour < 20) return THEME_MODES.SUNSET;
+  if (hour >= 10 && hour < 17) return THEME_MODES.MIDDAY;
+  if (hour >= 17 && hour < 20) return THEME_MODES.EVENING;
   return THEME_MODES.NIGHT;
 };
 
