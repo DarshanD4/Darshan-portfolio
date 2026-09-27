@@ -14,7 +14,7 @@ function Footer() {
             <span>Darshan MP</span>
           </a>
           <p className="text-xs font-normal text-slate-500 dark:text-slate-400 mt-1">
-            Flutter Developer Intern @ ByteCraft Studios • Cross-Platform Mobile & AI Systems
+            Flutter Developer · Cross-Platform Mobile & AI Systems • ByteCraft Studios & Code Infinite Alum
           </p>
         </div>
 

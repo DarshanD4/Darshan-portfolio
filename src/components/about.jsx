@@ -61,7 +61,7 @@ function About() {
           {/* Story Narrative */}
           <div className="lg:col-span-6 space-y-5 text-slate-600 dark:text-slate-300 leading-relaxed text-base">
             <p>
-              I am a Flutter Developer Intern at{" "}
+              I am a cross-platform mobile developer who has completed production engineering internships at{" "}
               <a
                 href="https://bytecraftstudios.in/"
                 target="_blank"
@@ -69,14 +69,14 @@ function About() {
                 className="font-bold text-slate-900 dark:text-white underline decoration-sky-500 decoration-2 hover:text-sky-600 dark:hover:text-sky-400 transition"
               >
                 ByteCraft Studios
-              </a>
-              , specializing in building high-performance cross-platform mobile applications. I translate intricate product requirements into smooth, responsive, and maintainable experiences using Flutter and React Native.
+              </a>{" "}
+              and <strong>Code Infinite</strong>. I translate complex product workflows into fast, responsive, and maintainable applications using Flutter and React Native.
             </p>
             <p>
-              My background spans mobile architecture, state management, and applied artificial intelligence—including designing CNN-based deepfake verification models that reach verified 85% accuracy.
+              My engineering background spans mobile architecture, REST API integration, state management, and applied artificial intelligence—including designing CNN and LSTM-based deepfake verification models that reach verified 85% accuracy.
             </p>
             <p>
-              I work with a collaborative, product-first mindset: optimizing runtime efficiency, refining UI micro-interactions, and shipping high-impact features that delight users.
+              I work with a product-first mindset: from interface to API to deployment. Whether engineering enterprise payroll workflows in Edprowise or offline-first sync pipelines with SQLite, I build software that is robust, testable, and pleasant to use.
             </p>
 
             <div className="pt-3">

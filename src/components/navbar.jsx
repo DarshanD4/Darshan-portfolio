@@ -17,6 +17,7 @@ function Navbar() {
   const navLinks = [
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
+    { name: "Credentials", href: "#credentials" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
     { name: "Contact", href: "#contact" },
@@ -65,7 +66,7 @@ function Navbar() {
           <TimeThemeSelector />
 
           <a
-            href="/MA_SD_Resume.pdf"
+            href="/Darshan_MP_Resume.pdf"
             target="_blank"
             rel="noreferrer"
             className="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl btn-theme-primary text-xs font-bold transition shadow-xs hover:shadow-sm"
@@ -116,7 +117,7 @@ function Navbar() {
                 </a>
               ))}
               <a
-                href="/MA_SD_Resume.pdf"
+                href="/Darshan_MP_Resume.pdf"
                 target="_blank"
                 rel="noreferrer"
                 className="mt-2 flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl btn-theme-primary text-sm font-bold shadow-xs"

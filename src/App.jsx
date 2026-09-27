@@ -3,8 +3,10 @@ import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import About from "./components/about";
 import Experience from "./components/experience";
+import Credentials from "./components/credentials";
 import Projects from "./components/projects";
 import Skills from "./components/skills";
+import BeyondCode from "./components/beyondCode";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
 
@@ -30,8 +32,10 @@ function PortfolioContent() {
         <Hero />
         <About />
         <Experience />
+        <Credentials />
         <Projects />
         <Skills />
+        <BeyondCode />
         <Contact />
       </main>
       <Footer />
