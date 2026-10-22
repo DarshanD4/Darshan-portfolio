@@ -20,12 +20,13 @@ function Skills() {
       subSkills: [
         "Dart (Object-Oriented & Asynchronous)",
         "State Management (ChangeNotifier, ValueNotifier)",
-        "Responsive UI (Phone, Tablet, Landscape adaptation)",
+        "Responsive UI (Phone, Tablet, Galaxy Z Fold & Flip adaptation)",
+        "Local-First 0ms Architecture & Crash-Proof Auto-Save",
         "REST API Integration & Resilient Caching",
         "React Native & Cross-Platform Bridge",
         "Custom Canvas Painters & Micro-Animations",
       ],
-      highlights: "Production mobile apps delivered at ByteCraft & Code Infinite",
+      highlights: "Production mobile apps delivered at ByteCraft, Code Infinite & PulseFit",
     },
     {
       id: "aiml",
@@ -60,6 +61,7 @@ function Skills() {
       ),
       coreTech: "Firebase & Supabase",
       subSkills: [
+        "Supabase (PostgreSQL, Row Level Security, HMAC Signed URLs)",
         "RESTful API Architecture & JSON Serialization",
         "Firebase Auth, Firestore & Cloud Storage",
         "Supabase Realtime WebSockets & Database Events",
@@ -67,7 +69,7 @@ function Skills() {
         "OAuth & Role-Based Access Control (RBAC)",
         "API Security & Rate Limiting",
       ],
-      highlights: "Real-time sync for social communities and enterprise ERPs",
+      highlights: "Real-time sync for social communities, fitness ecosystems & enterprise ERPs",
     },
     {
       id: "database",

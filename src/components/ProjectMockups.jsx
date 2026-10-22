@@ -243,3 +243,118 @@ export function FinanceTrackerMockup() {
     </div>
   );
 }
+
+export function WorkoutTrackerMockup() {
+  return (
+    <div className="w-full rounded-2xl bg-gradient-to-br from-slate-950 via-slate-900 to-emerald-950/70 p-4 sm:p-6 text-white font-sans shadow-xl border border-slate-800">
+      {/* Top Header */}
+      <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+        <div className="flex items-center gap-2.5">
+          <div className="w-8 h-8 rounded-lg bg-emerald-500 text-white font-extrabold flex items-center justify-center text-xs shadow-xs">
+            PF
+          </div>
+          <div>
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs font-bold tracking-tight text-white">PULSE FIT ENGINE</span>
+              <span className="px-2 py-0.2 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold border border-emerald-500/30">
+                0ms Local-First
+              </span>
+            </div>
+            <span className="text-[10px] text-slate-400">Hybrid Flutter & Supabase Fitness Architecture</span>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-2 text-[10px] text-emerald-400 bg-emerald-950/50 px-2.5 py-1 rounded-lg border border-emerald-800/60 font-mono">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span>RLS Synced</span>
+        </div>
+      </div>
+
+      {/* Crash-Proof Active Workout Recovery Banner */}
+      <div className="p-3.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-slate-900 to-amber-500/10 border border-amber-500/40 mb-3.5 flex items-center justify-between gap-3">
+        <div className="flex items-center gap-2.5">
+          <div className="w-7 h-7 rounded-lg bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-400 shrink-0">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-extrabold text-amber-300">Active Workout Recovered</span>
+              <span className="px-1.5 py-0.2 text-[9px] font-mono rounded bg-amber-500/20 text-amber-200">15s Heartbeat Auto-Save</span>
+            </div>
+            <span className="text-[11px] text-slate-300">Push Day: Chest & Triceps • Elapsed: <strong className="text-white font-mono">42:15</strong></span>
+          </div>
+        </div>
+        <span className="text-[10px] font-bold px-2 py-1 rounded-lg bg-amber-500 text-slate-950 shrink-0">
+          Resume ↗
+        </span>
+      </div>
+
+      {/* Unified Exercise Node with Choice-Based Equipment Selector */}
+      <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 mb-3.5">
+        <div className="flex items-center justify-between mb-2.5">
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold text-white">Flat Bench Press</span>
+            <span className="text-[10px] text-slate-400">· Chest & Anterior Delts</span>
+          </div>
+          {/* Equipment choice chips */}
+          <div className="flex items-center gap-1 bg-slate-950 p-0.5 rounded-lg border border-slate-800 text-[10px]">
+            <span className="px-2 py-0.5 rounded bg-emerald-500 text-slate-950 font-bold">Barbell</span>
+            <span className="px-2 py-0.5 text-slate-400 hover:text-white transition">Dumbbell</span>
+            <span className="px-2 py-0.5 text-slate-400 hover:text-white transition">Smith</span>
+          </div>
+        </div>
+
+        {/* Set Rows */}
+        <div className="grid grid-cols-2 gap-2 text-[11px]">
+          <div className="p-2 rounded-lg bg-slate-800/60 border border-slate-700/50 flex items-center justify-between">
+            <span className="text-slate-400">Set 1: <strong className="text-white font-mono">100 kg × 8</strong></span>
+            <span className="text-emerald-400 font-bold">✓ 0ms Cached</span>
+          </div>
+          <div className="p-2 rounded-lg bg-slate-800/60 border border-slate-700/50 flex items-center justify-between">
+            <span className="text-slate-400">Set 2: <strong className="text-white font-mono">102.5 kg × 6</strong></span>
+            <span className="text-emerald-400 font-bold">✓ Progressive</span>
+          </div>
+        </div>
+      </div>
+
+      {/* 2-Column Vault & Nutrition Highlights */}
+      <div className="grid grid-cols-2 gap-3 text-xs mb-3">
+        {/* Private Visual Vault */}
+        <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col justify-between">
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-sky-400">Private Visual Vault</span>
+            <span className="text-[9px] px-1.5 py-0.2 rounded bg-sky-500/20 text-sky-300 font-mono">HMAC 60m TTL</span>
+          </div>
+          <p className="text-[11px] text-slate-300 leading-snug mb-1">
+            Zero-knowledge progress photo storage with Supabase RLS isolation.
+          </p>
+          <span className="text-[10px] text-slate-500 font-mono">No public S3 bucket exposure</span>
+        </div>
+
+        {/* Macro & Hydration Tracker */}
+        <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800 flex flex-col justify-between">
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-400">Nutrition & Macros</span>
+            <span className="text-[10px] font-mono font-bold text-white">2,450 kcal</span>
+          </div>
+          <div className="space-y-1 text-[10px] text-slate-300">
+            <div className="flex justify-between"><span>Protein: 165g / 170g</span><span className="text-emerald-400 font-bold">97%</span></div>
+            <div className="flex justify-between"><span>Daily Hydration: 2.8L</span><span className="text-sky-400 font-bold">Optimal</span></div>
+          </div>
+          <span className="text-[10px] text-slate-500 font-mono mt-1">25+ 1-tap food presets</span>
+        </div>
+      </div>
+
+      {/* Multi-Form-Factor Hardware Badge */}
+      <div className="flex items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-800/70">
+        <span className="flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+          <span>Foldable & Flip Hardware Ready (Galaxy Z Fold / Z Flip)</span>
+        </span>
+        <span className="text-slate-500 font-mono text-[10px]">CLS = 0 (10 Shimmer Skeletons)</span>
+      </div>
+    </div>
+  );
+}
