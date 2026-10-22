@@ -63,7 +63,7 @@ function Projects() {
     },
     {
       id: "workout-engine",
-      title: "PulseFit",
+      title: "Workout Tracker",
       subtitle: "Hybrid Workout & Nutrition Engine with Crash-Proof Recovery",
       badge: "FLAGSHIP APPLICATION",
       productionTag: "0ms Offline Resilience · Fold & Flip Ready",

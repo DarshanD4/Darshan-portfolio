@@ -26,7 +26,7 @@ function Skills() {
         "React Native & Cross-Platform Bridge",
         "Custom Canvas Painters & Micro-Animations",
       ],
-      highlights: "Production mobile apps delivered at ByteCraft, Code Infinite & PulseFit",
+      highlights: "Production mobile apps delivered at ByteCraft, Code Infinite & Workout Tracker",
     },
     {
       id: "aiml",

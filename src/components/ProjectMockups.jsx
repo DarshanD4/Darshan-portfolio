@@ -251,11 +251,11 @@ export function WorkoutTrackerMockup() {
       <div className="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-emerald-500 text-white font-extrabold flex items-center justify-center text-xs shadow-xs">
-            PF
+            WT
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold tracking-tight text-white">PULSE FIT ENGINE</span>
+              <span className="text-xs font-bold tracking-tight text-white">WORKOUT TRACKER</span>
               <span className="px-2 py-0.2 rounded-full bg-emerald-500/20 text-emerald-400 text-[10px] font-bold border border-emerald-500/30">
                 0ms Local-First
               </span>
